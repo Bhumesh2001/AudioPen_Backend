@@ -7,6 +7,10 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+app.get('/', (req, res) => {
+    res.send(`<h1>Hello from Backend<h1/>`)
+});
+
 app.post("/summarize", async (req, res) => {
     const { text } = req.body;
     try {
