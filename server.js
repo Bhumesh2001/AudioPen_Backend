@@ -35,5 +35,3 @@ app.post("/summarize", async (req, res) => {
 });
 
 app.listen(5000, () => console.log("✅ Free LLM server on port 5000"));
-
-module.exports = app;
