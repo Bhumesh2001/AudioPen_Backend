@@ -27,7 +27,7 @@ app.post("/summarize", async (req, res) => {
                 },
             }
         );
-        res.json({ summary: response.data.choices[0].message.content });
+        res.status(200).json({ summary: response.data.choices[0].message.content });
     } catch (error) {
         console.error("OpenRouter error:", error.response?.data || error.message);
         res.status(500).json({ error: "OpenRouter API failed" });
@@ -35,3 +35,5 @@ app.post("/summarize", async (req, res) => {
 });
 
 app.listen(5000, () => console.log("✅ Free LLM server on port 5000"));
+
+module.exports = app;
